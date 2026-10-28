@@ -1,0 +1,18 @@
+{
+  "schema": 1,
+  "updatedAt": "2026-10-28T07:37:57Z",
+  "plugins": [
+    {
+      "id": "chrome-proxy-launcher",
+      "name": "Chrome 隔离出口启动器",
+      "nameEn": "Chrome Isolated Proxy Launcher",
+      "icon": "🌐",
+      "category": "browser",
+      "distribution": "builtin",
+      "builtinSince": "2.9.0",
+      "summary": "每个身份一份完全隔离的 Chrome profile，各自绑定出口：本机 VPN、http(s)/socks5 代理，或 Clash 订阅节点。",
+      "summaryEn": "One isolated Chrome profile per identity, each pinned to its own egress: local VPN, http(s)/socks5 proxies, or Clash subscription nodes.",
+      "homepage": "https://github.com/lsjwzh/MultiCC/tree/main/plugins/chrome-proxy-launcher"
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+# The signature covers the exact bytes of index.json: never rewrite line endings.
+index.json -text
+index.json.sig -text
