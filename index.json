@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedAt": "2026-10-31T04:22:20Z",
+  "updatedAt": "2026-10-31T13:07:25Z",
   "plugins": [
     {
       "id": "chrome-proxy-launcher",
@@ -26,8 +26,51 @@
       ],
       "summary": "在这台 Mac 上操作微信桌面版，把任务出错、在等你回答等提醒发给你核对过的接收人；发前三重核对，每步留截图。",
       "summaryEn": "Sends MultiCC alerts (failures, questions waiting for you) to recipients you verified, by driving WeChat for Mac; three checks before every send, with screenshots at each step.",
-      "latest": "0.2.1",
+      "latest": "0.3.0",
       "releases": [
+        {
+          "version": "0.3.0",
+          "publishedAt": "2026-10-31T13:07:15Z",
+          "requires": {
+            "multicc": ">=2.12.1",
+            "pluginApi": 2,
+            "agentBuild": ">=5",
+            "platforms": [
+              {
+                "os": "darwin",
+                "arch": [
+                  "arm64"
+                ],
+                "minOS": "12.0"
+              }
+            ],
+            "apps": [
+              {
+                "id": "com.tencent.xinWeChat",
+                "name": "微信",
+                "nameEn": "WeChat",
+                "minVersion": "4.0.0",
+                "testedVersion": "4.1.15",
+                "macosPaths": [
+                  "/Applications/WeChat.app"
+                ]
+              }
+            ],
+            "permissions": [
+              "accessibility",
+              "screenRecording"
+            ]
+          },
+          "assets": {
+            "darwin-arm64": {
+              "url": "https://github.com/lsjwzh/multicc-plugins/releases/download/wechat-desktop-notify-v0.3.0/wechat-desktop-notify-0.3.0-darwin-arm64.zip",
+              "sha256": "32a25460bde01f97083fb397ee99471776ce1e1dd87fc7cb693a7d033dec5a6e",
+              "size": 1401326
+            }
+          },
+          "notes": "接入 MultiCC 推送和钩子：在「设置 → 推送通知 → 插件渠道」或钩子的「发到渠道」里选微信接收人即可收到提醒；同一件事推送和钩子同时命中只发一条；发送前向 MultiCC 复核问题是否还在，已解决的不发；合并消息逐条写明任务名；面板「快速接入」一键订阅，界面支持英文。渠道订阅与钩子需要带这些接口的 MultiCC（main 分支）。",
+          "notesEn": "Hooks into MultiCC push and hooks: pick a WeChat recipient under Settings → Push → Plugin channels, or in a hook's \"Send to channel\" action. When push and a hook match the same thing, one message is sent; before sending it asks MultiCC whether each problem is still open and skips resolved ones; merged messages name each task; the panel's quick connect subscribes in one click, and the panel follows the MultiCC UI language. Channel subscriptions and hooks need a MultiCC that has these endpoints (main branch)."
+        },
         {
           "version": "0.2.1",
           "publishedAt": "2026-10-31T04:22:12Z",
