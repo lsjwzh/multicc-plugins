@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedAt": "2026-10-28T07:37:57Z",
+  "updatedAt": "2026-10-31T04:22:20Z",
   "plugins": [
     {
       "id": "chrome-proxy-launcher",
@@ -13,6 +13,65 @@
       "summary": "每个身份一份完全隔离的 Chrome profile，各自绑定出口：本机 VPN、http(s)/socks5 代理，或 Clash 订阅节点。",
       "summaryEn": "One isolated Chrome profile per identity, each pinned to its own egress: local VPN, http(s)/socks5 proxies, or Clash subscription nodes.",
       "homepage": "https://github.com/lsjwzh/MultiCC/tree/main/plugins/chrome-proxy-launcher"
+    },
+    {
+      "id": "wechat-desktop-notify",
+      "distribution": "optional",
+      "name": "微信桌面提醒",
+      "nameEn": "WeChat Desktop Alerts",
+      "icon": "💬",
+      "category": "channel",
+      "provides": [
+        "channel"
+      ],
+      "summary": "在这台 Mac 上操作微信桌面版，把任务出错、在等你回答等提醒发给你核对过的接收人；发前三重核对，每步留截图。",
+      "summaryEn": "Sends MultiCC alerts (failures, questions waiting for you) to recipients you verified, by driving WeChat for Mac; three checks before every send, with screenshots at each step.",
+      "latest": "0.2.1",
+      "releases": [
+        {
+          "version": "0.2.1",
+          "publishedAt": "2026-10-31T04:22:12Z",
+          "requires": {
+            "multicc": ">=2.12.1",
+            "pluginApi": 2,
+            "agentBuild": ">=5",
+            "platforms": [
+              {
+                "os": "darwin",
+                "arch": [
+                  "arm64"
+                ],
+                "minOS": "12.0"
+              }
+            ],
+            "apps": [
+              {
+                "id": "com.tencent.xinWeChat",
+                "name": "微信",
+                "nameEn": "WeChat",
+                "minVersion": "4.0.0",
+                "testedVersion": "4.1.15",
+                "macosPaths": [
+                  "/Applications/WeChat.app"
+                ]
+              }
+            ],
+            "permissions": [
+              "accessibility",
+              "screenRecording"
+            ]
+          },
+          "assets": {
+            "darwin-arm64": {
+              "url": "https://github.com/lsjwzh/multicc-plugins/releases/download/wechat-desktop-notify-v0.2.1/wechat-desktop-notify-0.2.1-darwin-arm64.zip",
+              "sha256": "4eb74f1c648e678a3fcc1b9287793b5a602d5cc93d545e59f8a0a84b46ba891e",
+              "size": 1384924
+            }
+          },
+          "notes": "首个公开版本：接收人绑定（定位核对 → 测试发送 → 手机确认）、投递队列与九步核对的真实发送；需要带插件 API 2 的 MultiCC。",
+          "notesEn": "First public release: recipient binding (locate and title check, test send, phone confirmation), delivery queue, and real sending with nine checks. Needs a MultiCC with plugin API 2."
+        }
+      ]
     }
   ]
 }

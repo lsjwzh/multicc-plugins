@@ -1,0 +1,3 @@
+# Packages built by scripts/release.js; they go to GitHub Releases, never into git.
+dist/
+.DS_Store
