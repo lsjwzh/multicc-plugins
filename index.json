@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updatedAt": "2026-10-31T13:07:25Z",
+  "updatedAt": "2026-11-04T00:44:04Z",
   "plugins": [
     {
       "id": "chrome-proxy-launcher",
@@ -26,8 +26,51 @@
       ],
       "summary": "在这台 Mac 上操作微信桌面版，把任务出错、在等你回答等提醒发给你核对过的接收人；发前三重核对，每步留截图。",
       "summaryEn": "Sends MultiCC alerts (failures, questions waiting for you) to recipients you verified, by driving WeChat for Mac; three checks before every send, with screenshots at each step.",
-      "latest": "0.3.0",
+      "latest": "0.3.1",
       "releases": [
+        {
+          "version": "0.3.1",
+          "publishedAt": "2026-11-04T00:43:50Z",
+          "requires": {
+            "multicc": ">=2.12.1",
+            "pluginApi": 2,
+            "agentBuild": ">=5",
+            "platforms": [
+              {
+                "os": "darwin",
+                "arch": [
+                  "arm64"
+                ],
+                "minOS": "12.0"
+              }
+            ],
+            "apps": [
+              {
+                "id": "com.tencent.xinWeChat",
+                "name": "微信",
+                "nameEn": "WeChat",
+                "minVersion": "4.0.0",
+                "testedVersion": "4.1.15",
+                "macosPaths": [
+                  "/Applications/WeChat.app"
+                ]
+              }
+            ],
+            "permissions": [
+              "accessibility",
+              "screenRecording"
+            ]
+          },
+          "assets": {
+            "darwin-arm64": {
+              "url": "https://github.com/lsjwzh/multicc-plugins/releases/download/wechat-desktop-notify-v0.3.1/wechat-desktop-notify-0.3.1-darwin-arm64.zip",
+              "sha256": "578a4020035546ac8b37a1638dc2f34dd78f2a4434a290c8f432da085adec3f0",
+              "size": 1401940
+            }
+          },
+          "notes": "UX 优化：术语口语化、高级设置折叠、步骤完成标记",
+          "notesEn": "UX optimization: plain language, collapsible advanced settings, step completion indicators"
+        },
         {
           "version": "0.3.0",
           "publishedAt": "2026-10-31T13:07:15Z",
